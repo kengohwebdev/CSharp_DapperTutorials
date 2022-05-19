@@ -1,1 +1,595 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Project2
+{
+    internal class Project2
+    {
+        static void Main(string[] args)
+        {
+
+            /* ///*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+            Console.WriteLine("\n Quesion 1\n");
+
+            int[] array1 = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] array2 = new int[10];
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                array2[i] = array1[i];
+                Console.WriteLine(array2[i]);
+            }
+
+
+
+
+
+
+            /*////    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+
+            Console.WriteLine("\n\nQuestion 2\n");
+
+            String inputCommand;
+            String answer;
+            bool enterAgain = true;
+            string item;
+
+            List<string> groceryList = new List<string>();
+
+
+            while (enterAgain)
+            {
+                inputCommand = "";
+                answer = "";
+
+
+                while (inputCommand != "+" && inputCommand != "-" && inputCommand != "--")
+                {
+                    Console.WriteLine(" \nEnter command (+ item, - item, or -- to clear)):");
+                    inputCommand = Console.ReadLine();
+                }
+
+                switch (inputCommand)
+                {
+                    case "+":
+
+                        Console.WriteLine(" \nEnter new item to list : ");
+                        item = Convert.ToString(Console.ReadLine());
+
+                        groceryList.Add(item);
+
+                        Console.WriteLine("\nYour added " + item + " to the grocery list!");
+                        Console.WriteLine("Your current grocery list : ");
+
+                        foreach (string s in groceryList)
+                        {
+                            Console.WriteLine(s);
+                        }
+
+                        break;
+
+                    case "-":
+
+                        Console.WriteLine("\nRemove item from list : ");
+                        item = Convert.ToString(Console.ReadLine());
+
+
+                        for (int i = 0; i < groceryList.Count; i++)
+                        {
+                            if (groceryList[i] == item)
+                                groceryList.Remove(item);
+                        }
+
+
+
+
+                        Console.WriteLine(" \nYour removed " + item + " from the grocery list!");
+                        Console.WriteLine("Your current grocery list : ");
+
+                        foreach (string s in groceryList)
+                        {
+                            Console.WriteLine(s);
+                        }
+
+                        break;
+
+                    case "--":
+
+                        Console.WriteLine(" \nCleared all grocery list!");
+
+                        groceryList.Clear();
+
+                        Console.WriteLine("Your current basket is empty!");
+
+                        foreach (string i in groceryList)
+                        {
+                            Console.WriteLine(i);
+                        }
+                        break;
+                }
+
+
+
+                Console.Write("\nEnter again? 'Y' for yes, else break : ");
+                answer = Console.ReadLine();
+                answer = answer.ToUpper();
+
+                if (answer == "Y")
+                {
+                    enterAgain = true;
+
+                }
+                else
+                {
+                    enterAgain = false;
+                }
+
+
+                Console.WriteLine("\nYour current grocery list : ");
+
+                foreach (string gl in groceryList)
+                {
+                    Console.WriteLine(gl);
+                }
+
+
+
+            }
+
+            /*////    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+            Console.WriteLine("\n\n Quesion 3\n");
+
+
+            Console.WriteLine("Find all prime numbers in range,");
+            Console.WriteLine("Enter starting number : ");
+            int startNum = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter ending number : ");
+            int endNum = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Prime numbers in range : \n");
+            int[] arrayPN = FindPrimesInRange(startNum, endNum);
+
+
+
+
+
+            /* //    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+            Console.WriteLine("\n\n Quesion 4\n");
+
+
+            int[] arr = { 1, 2, 3 };
+            int N = arr.Length;
+
+            Console.Write("   Array[] = ");
+            printArray(arr, N);
+            Console.WriteLine();
+
+
+            int[] rotate1 = arr.ToArray();
+            LeftRotate(rotate1);
+
+            Console.Write("rotated1[] = ");
+            printArray(rotate1, N);
+            Console.WriteLine();
+
+
+            int[] rotate2 = rotate1.ToArray();
+            LeftRotate(rotate2);
+
+            Console.Write("rotated2[] = ");
+            printArray(rotate2, N);
+            Console.WriteLine();
+
+
+
+            int[] sum = new int[arr.Length];
+
+
+            Console.Write("     sum[] = ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum[i] = rotate1[i] + rotate2[i];
+
+                Console.Write(sum[i] + " ");
+
+            }
+
+            Console.WriteLine('\n');
+
+
+
+
+
+
+
+
+            /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+            Console.WriteLine("\n\n Quesion 5\n");
+
+            var elemts = new int[] { 0, 1, 2, 2, 3, 3, 3, 4 };
+
+            var result = LongestSequence(elemts);
+
+            foreach (var i in result)
+            {
+                Console.Write(i + "\t");
+            }
+
+            Console.ReadLine();
+
+
+
+
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+
+            Console.WriteLine("\n\n Quesion 7\n");
+
+            int[] arrFreq = { 8, 8 ,8, 5, 2, 0 ,2 };
+            int len = arrFreq.Length; //finding the Length
+            Console.WriteLine($"Most repeated number is {repeated(arrFreq, len)}"); //function call 
+
+            
+
+            /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+
+
+
+
+            
+
+
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+            /*------------------Q1            //Practice Strings*/
+
+            Console.WriteLine("\n\n quesion 1\n");
+
+
+
+            Console.Write("\nEnter a string : ");
+            string strInput = Console.ReadLine();
+            strReverse(strInput);
+
+
+            //Print letters backward with loop
+            Console.Write("\nEnter a string to be reversed : ");
+            var input = Console.ReadLine();
+
+            var final = "";
+            for (var i = input.Length - 1; i >= 0; i--)
+            {
+                final += input[i];
+            }
+
+            Console.Write("\nReversed string: ");
+            foreach (var item2 in final)
+            {
+                Console.Write(item2);
+            }
+
+            Console.WriteLine("\n");
+
+
+
+
+
+
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+            /*------------------Q2           //Practice Strings*/
+
+            Console.WriteLine("\n\n quesion 2\n");
+
+
+            //try regex
+            String pattern = @"\b[^abc]\w+";
+
+
+            String str2 = "C# is not C++, and PHP is not Delphi!";
+            Regex.Match(str2, pattern, RegexOptions.IgnoreCase);
+            char[] strArr2 = reverseStr2(str2.ToCharArray());
+
+            Console.Write(strArr2);
+            Console.WriteLine("\n");
+
+
+
+            String str3 = "The quick brown fox jumps over the lazy dog /Yes! Really!!!/.";
+            Regex.Match(pattern, str3, RegexOptions.IgnoreCase);
+            char[] strArr3 = reverseStr2(str3.ToCharArray());
+
+            Console.Write(strArr3);
+            Console.WriteLine("\n");
+
+
+
+
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+            /*------------------Q3           //Practice Strings*/
+
+            Console.WriteLine("\n\n Question 3\n");
+
+            string reversestr = String.Empty;
+            String pali = "Hi,exe? ABBA! Hog fully a string: ExE. Bob";
+            if (pali != null)
+            {
+                for (int i = pali.Length - 1; i >= 0; i--)
+                {
+                    pali += pali[i].ToString();
+                }
+                if (reversestr == pali)
+                {
+                    Console.WriteLine("String is Palindrome Input = {0} and Output= {1}", pali, reversestr);
+                }
+                else
+                {
+                    Console.WriteLine("String is not Palindrome Input = {0} and Output= {1}", pali, reversestr);
+                }
+            }
+
+
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+            /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+            /*------------------Q4           //Practice Strings*/
+
+            Console.WriteLine("\n\n quesion 4\n");
+            /*//            function break_address(url_add)
+                        {
+                            var data = url_add.split("://")
+            var protocol = data[0];
+                            data = data[1].split(".");
+                            var domain = data[0];
+                            data = data[1].split(".");
+
+                            if (data[1])
+                            {
+                                return [protocol, domain, data[1]]
+                            }
+
+                            return [protocol, domain]
+            }
+
+                        var url_add = "http://www.google.com"
+            console.log("Original address: " + url_add)
+            console.log(break_address(url_add))*/
+
+
+            Console.ReadKey();
+
+        }
+
+
+
+
+
+
+
+
+        private static int[] FindPrimesInRange(int startNum, int endNum)
+        {
+            int i, j, k;
+            int nLength = endNum - startNum + 1;
+
+            int[] arr = new int[nLength];
+
+            List<int> arrayPN = new List<int>();
+
+            for (i = 0; i < nLength; i++)
+            {
+                arr[i] = startNum;
+                startNum++;
+            }
+
+
+
+            for (i = 2; i < arr.Length; i++)
+            {
+                j = 2;
+                k = 1;
+                while (j < arr[i])
+                {
+                    if (arr[i] % j == 0)
+                    {
+                        k = 0;
+                        break;
+                    }
+                    j++;
+                }
+
+                if (k == 1)
+                {
+                    arrayPN.Add(arr[i]);
+                }
+            }
+
+            foreach (int p in arrayPN)
+            {
+                Console.WriteLine(p);
+            }
+
+            return arrayPN.ToArray();
+
+
+
+
+        }
+
+        /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+        /*UTILITY FUNCTIONS*/
+        /* Function to print an array */
+        static void printArray(int[] arr, int size)
+        {
+            for (int i = 0; i < size; i++)
+                Console.Write(arr[i] + " ");
+        }
+
+
+
+        
+        private static void LeftRotate(int[] rArr)
+        {
+            int last = rArr[rArr.Length - 1];
+
+            for (var i = rArr.Length - 1; i > 0; i--)
+            {
+                rArr[i] = rArr[i - 1];
+            }
+
+            rArr[0] = last;
+        }
+
+
+        /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+
+        public static int[] LongestSequence(int[] elems)
+        {
+            var longSequenceEqualElem = new List<int>();
+            return LongestSequenceRec(elems, longSequenceEqualElem, 0);
+        }
+
+        private static int[] LongestSequenceRec(int[] elems, List<int> sequence, int pos)
+        {
+            if (pos < elems.Length)
+            {
+                if (sequence.Contains(elems[pos]))
+                {
+                    sequence.Add(elems[pos]);
+                    return LongestSequenceRec(elems, sequence, pos + 1);
+                }
+                else
+                {
+                    var newSeq = LongestSequenceRec(elems, new List<int> { elems[pos] }, pos + 1);
+                    return (newSeq.Length > sequence.Count) ? newSeq.ToArray() : sequence.ToArray();
+                }
+            }
+            return sequence.ToArray();
+        }
+
+
+        /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+
+        /*//  Console.WriteLine("\n\n quesion 7\n");*/
+
+        static int repeated(int[] num, int len)
+        {
+            Array.Sort(num); // Sorting the array
+
+            int max = 1, res = num[0], c = 1;
+
+            for (int i = 1; i < len; i++)
+            {
+                if (num[i] == num[i - 1])
+                    c++;
+                else
+                {
+                    if (c > max) //finding most repeated number 
+                    {
+                        max = c;
+                        res = num[i - 1];
+                    }
+                    c = 1;
+                }
+            }
+
+            // If last element is most frequent
+            if (c > max)
+            {
+                max = c;
+                res = num[len - 1];
+            }
+
+            return res;
+        }
+
+        /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+        /*-------------------        //Practice Strings--------------------------*/
+
+
+
+
+        public static string strReverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            Console.WriteLine(charArray);
+            return new string(charArray);
+        }
+
+
+        /*//    /*-----------------------NEXT PROBLEM BEGINS------------------------*/
+        /*-------------------        //Practice Strings--------------------------*/
+
+
+        static void reverse(char[] str1,
+                    int start,
+                    int end)
+        {
+
+            // Temporary variable
+            // to store character
+            char temp;
+
+            while (start <= end)
+            {
+
+                // Swapping the first
+                // and last character
+                temp = str1[start];
+                str1[start] = str1[end];
+                str1[end] = temp;
+                start++;
+                end--;
+            }
+        }
+        static char[] reverseStr2(char[] str2)
+        {
+
+            // Reversing individual words as
+            // explained in the first step
+
+            int start = 0;
+            for (int end = 0; end < str2.Length; end++)
+            {
+
+                // If we see a space, we
+                // reverse the previous
+                // word (word between
+                // the indexes start and end-1
+                // i.e., s[start..end-1]
+                if (str2[end] == ' ')
+                {
+                    reverse(str2, start, end);
+                    start = end + 1;
+                }
+            }
+
+            // Reverse the last word
+            reverse(str2, start, str2.Length - 1);
+
+            // Reverse the entire String
+            reverse(str2, 0, str2.Length - 1);
+            return str2;
+        }
+    }
+}
+
+
+  
+
+
+
+
 
