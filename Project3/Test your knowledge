@@ -1,6 +1,32 @@
-1. What are the six combinations of access modifier keywords and what do they do? 2.
-What is the difference between the static, const, and readonly keywords when applied to
+1. What are the six combinations of access modifier keywords and what do they do? 
+
+public: 
+Access is not restricted.
+
+protected: 
+Access is limited to the containing class or types derived from the containing class.
+
+internal: 
+Access is limited to the current assembly.
+
+protected internal: 
+Access is limited to the current assembly or types derived from the containing class.
+
+private: 
+Access is limited to the containing type.
+
+private protected: 
+Access is limited to the containing class or types derived from the containing class 
+within the current assembly.
+
+
+
+2.What is the difference between the static, const, and readonly keywords when applied to
 a type member?
+Constant and ReadOnly keyword is used to make a field constant which value cannot be modified. 
+The static keyword is used to make members static that can be shared by all the class objects
+
+
 3. What does a constructor do?
 4. Why is the partial keyword useful?
 5. What is a tuple?
