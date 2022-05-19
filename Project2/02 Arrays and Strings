@@ -1,0 +1,25 @@
+02 Arrays and Strings
+
+Test your Knowledge
+
+1. When to use String vs. StringBuilder in C# ?
+When we perform operations on string, string is recreated in the memory over and over again, whereas StringBuilder is mutable and applies modifications into that buffer space in the memory.
+
+2. What is the base class for all arrays in C#?
+Definition provides method for creating, manipulating, searching, and sorting Arrays, thereby serving as the base class for all arrays in the common language runtime.
+
+3. How do you sort an array in C#?
+Array.Sort Method sort the elements in a one-dimensional array.
+
+4. What property of an array object can be used to get the total number of elements in
+an array?
+
+5. Can you store multiple data types in System.Array?
+No, an array is a homogeneous data structure that stores elements have the same data. Each obect of the array can be accessed by using index.
+
+6. What’s the difference between the System.Array.CopyTo() and System.Array.Clone()?
+System.Array.CopyTo() Copies all the elements of the current one-dimesional array to specified one-dimensional array.
+System.Array.Copy() creates a shallow copy of the Array.
+A shallow copy of an Array copies only the elements of the Array, whether they are reference type or values types, but it does not copy the objects that the references refer to. The references in the new Array point to the same objects that the references in the original Array point to.
+
+In contrast, System.Array.Clone() is a deep copy of an Array copies the elements and everything directly or indirectly referenced by the elements. The clone is of the same Type as the original Array.
