@@ -1,0 +1,371 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Project1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            String input1 = "";
+            String input2 = "";
+            String input3 = "";
+
+            Console.WriteLine("\nWhat is your favorite color? : ");
+            input1 = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("\nWhat is your astrology sign? : ");
+            input2 = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("\nWhat is your street address number? : ");
+            input3 = Convert.ToString(Console.ReadLine());
+            Console.WriteLine($"\nYour hacker name is {input1 + input2 + input3}\n");
+
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+            /*------------        //Practice number sizes and ranges
+                        Question1--------------------------------------*/
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine("| Type \t|\tBytes of Memory \t|\t Min \t\t\t\t\t|\tMax \t\t\t\t\t|");
+            Console.WriteLine($"| sbyte\t|\t {sizeof(sbyte)}\t\t\t|\t {sbyte.MinValue}\t\t\t\t\t|\t{sbyte.MaxValue} \t\t\t\t\t|");
+            Console.WriteLine($"| byte \t|\t {sizeof(byte)} \t\t\t|\t {byte.MinValue} \t\t\t\t\t|\t {byte.MaxValue} \t\t\t\t\t|");
+            Console.WriteLine($"| short\t|\t {sizeof(short)}\t\t\t|\t{short.MinValue}  \t\t\t\t|\t {short.MaxValue} \t\t\t\t\t|");
+            Console.WriteLine($"| ushort|\t {sizeof(ushort)} \t\t\t|\t {ushort.MinValue} \t\t\t\t\t|\t {ushort.MaxValue} \t\t\t\t\t|");
+            Console.WriteLine($"| int \t|\t {sizeof(int)} \t\t\t|\t {int.MinValue} \t\t\t\t|\t {int.MaxValue} \t\t\t\t|");
+            Console.WriteLine($"| uint \t|\t {sizeof(uint)} \t\t\t|\t {uint.MinValue} \t\t\t\t\t|\t {uint.MaxValue} \t\t\t\t|");
+            Console.WriteLine($"| long \t|\t {sizeof(long)} \t\t\t|\t {long.MinValue} \t\t\t|\t {long.MaxValue} \t\t\t|");
+            Console.WriteLine($"| ulong\t|\t {sizeof(ulong)} \t\t\t|\t {ulong.MinValue} \t\t\t\t\t|\t {ulong.MaxValue} \t\t\t|");
+            Console.WriteLine($"| float\t|\t {sizeof(float)} \t\t\t|\t {float.MinValue} \t\t\t|\t {float.MaxValue} \t\t\t\t|");
+            Console.WriteLine($"| double|\t {sizeof(double)} \t\t\t|\t {double.MinValue} \t\t|\t{double.MaxValue} \t\t\t|");
+            Console.WriteLine($"| decimal|\t {sizeof(decimal)} \t\t\t|\t {decimal.MinValue} \t|\t{decimal.MaxValue} \t\t|");
+
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+            /*------------        //Practice number sizes and ranges
+                        Question2--------------------------------------*/
+
+            int century = 0;
+
+            int years;
+            double days;
+            uint hours;
+            ulong minutes;
+            ulong seconds;
+            ulong miliseconds;
+            ulong microseconds;
+            ulong nanoseconds;
+
+
+            Console.Write("\nEnter an integer number for century : ");
+            century = Convert.ToInt32(Console.ReadLine());
+
+            years = century * 100;
+            Console.Write($"\n{century} centuries = {years} years ");
+
+            days = Convert.ToDouble(years) * 365.24;
+
+            Console.Write($"= {days} days");
+
+            hours = Convert.ToUInt32(days) * 24;
+            Console.Write($"= {hours} hours");
+
+            minutes = hours * 60;
+            Console.Write($"= {minutes} minutes");
+
+            seconds = minutes * 60;
+            Console.Write($"= {seconds} seconds");
+
+            miliseconds = seconds * 1000;
+            Console.Write($"\n= {miliseconds} seconds");
+
+            microseconds = miliseconds * 1000;
+            Console.Write($"= {microseconds} seconds");
+
+            nanoseconds = microseconds * 1000;
+            Console.Write($"= {nanoseconds} seconds");
+
+
+            Console.WriteLine("\n");
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+
+            /*------------        //Practice loops and operators
+                    Question1--------------------------------------*/
+
+
+            int n = 100;
+            string[] result = new string[n];
+
+            for (int k = 1; k <= n; k++)
+            {
+                if (k % 3 == 0 && k % 5 == 0)
+                    result[k - 1] = "FizzBuzz";
+                else if (k % 3 == 0)
+                    result[k - 1] = "Fizz";
+                else if (k % 5 == 0)
+                    result[k - 1] = "Buzz";
+                else
+                    result[k - 1] = k.ToString();
+            }
+
+            foreach (string s in result) 
+            { 
+                Console.Write($"{s} ,"); 
+            }
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+
+            /**///Warning : code doesn't run here!  ---   Warn user on code errors/**/
+            /*//int max = 500;
+            for (byte i = 0; i < max; i++)
+            {
+                
+                WriteLine(i);
+                
+            }*/
+
+
+
+
+
+            /*------------        //Practice loops and operators
+                    Question2--------------------------------------*/
+
+            int level, Space, Number;
+
+            Console.Write("Enter an integer number of rows for the base :");
+            level = Convert.ToInt16(Console.ReadLine());
+            
+            Console.WriteLine("Print pyramid");
+            for (int l = 1; l <= level; l++) // Total number of layer for pramid  
+            {
+                for (Space = 1; Space <= (level - l); Space++) // Loop For Space  
+                    Console.Write(" ");
+                for (Number = 1; Number <= l; Number++) //increase the value  
+                    Console.Write('*');
+                for (Number = (l - 1); Number >= 1; Number--) //decrease the value  
+                    Console.Write('*');
+                Console.WriteLine();
+            }
+
+           
+           
+          
+
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+            /*------------        //Practice loops and operators
+                    Question3--------------------------------------*/
+
+
+
+            Random random = new Random();
+            bool playAgain = true;
+            int min = 1;
+            int max = 3;
+            int guess;
+            int number;
+            int guesses;
+
+            while (playAgain)
+            {
+                guess = 0;
+                guesses = 0;
+                number = random.Next(min, max + 1);
+                String response = "";
+
+                while (guess != number)
+                {
+                    Console.WriteLine("Guess a number between" + min + " - " + max + " : ");
+                    guess = int.Parse(Console.ReadLine());
+
+                    if (guess > number)
+                    {
+                        Console.WriteLine(guess + " is too high!");
+                    }
+                    if (guess < number)
+                    {
+                        Console.WriteLine(guess + " is too low!");
+                    }
+
+                    guesses++;
+
+                }
+                Console.WriteLine("Number : " + number);
+                Console.WriteLine("You Win!");
+                Console.WriteLine("Guesses " + guesses);
+
+                Console.WriteLine(" Would you like to play again (Y/N) ? ");
+                response = Console.ReadLine();
+                response = response.ToUpper();
+
+                if (response == "Y")
+                {
+                    playAgain = true;
+                }
+                else
+                {
+                    playAgain = false;
+                }
+            }
+
+            Console.WriteLine("Thanks for playing!");
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+
+            /*------------        //Practice loops and operators
+                    Question4--------------------------------------*/
+
+            var today = DateTime.Today;
+            Console.WriteLine(today);
+
+            int current_date = today.Day;
+            int current_month = today.Month;
+            int current_year = today.Year;
+
+            Console.WriteLine("What is your birth year? : ");
+            int birthYear = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("What is your birth month? : ");
+            int birthMonth = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("What is your birth date? : ");
+            int birthDate = Convert.ToInt16(Console.ReadLine());
+
+            findAge(current_date, current_month,
+                   current_year, birthDate,
+                   birthMonth, birthYear);
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+            /*------------        //Practice loops and operators
+                    Question5--------------------------------------*/
+
+
+            DateTime currentDateTime = DateTime.Now;
+
+            int currentHour = currentDateTime.Hour;
+            int startMorningHour = 6;
+            int startAfternoonHour = 12;
+            int startEveningHour = 18;
+            int startNightHour = 24;
+
+            if (startMorningHour <= currentHour && currentHour < startAfternoonHour)
+            {
+                Console.WriteLine("Good morning!");
+            };
+
+            if (startAfternoonHour <= currentHour && currentHour < startEveningHour)
+            {
+                Console.WriteLine("Good Afternoon!");
+            };
+
+            if (startEveningHour <= currentHour && currentHour < startNightHour)
+            {
+                Console.WriteLine("Good Evening!");
+            };
+
+            if (startNightHour <= currentHour || currentHour < startMorningHour)
+            {
+                Console.WriteLine("Good Night!");
+            };
+
+            Console.WriteLine($"The current time is {currentDateTime.Hour}:{currentDateTime.Minute}:{currentDateTime.Second} o'clock.");
+
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+            /*------------        //Practice loops and operators
+                    Question6--------------------------------------*/
+
+
+            for (int r = 1; r <= 4; r++)
+            {
+
+                for (int c = 0; c <= 24; c++)
+                {
+                    Console.Write($"{c},");
+                    c = r + c - 1;
+
+                }
+
+
+                Console.WriteLine();
+
+            }
+
+            Console.WriteLine("\nNext Question\n");
+            Console.ReadKey();
+
+
+            static void findAge(int current_date,
+                           int current_month,
+                            int current_year,
+                              int birth_date,
+                             int birth_month,
+                              int birth_year)
+            {
+                int[] month = { 31, 28, 31, 30, 31, 30,
+                          31, 31, 30, 31, 30, 31 };
+
+                // if birth date is greater than
+                // current birth_month, then donot
+                // count this month and add 30 to the
+                // date so as to subtract the date and
+                // get the remaining days
+                if (birth_date > current_date)
+                {
+                    current_month = current_month - 1;
+
+                    current_date = current_date + month[birth_month - 1];
+                }
+
+                // if birth month exceeds current month,
+                // then do not count this year and add
+                // 12 to the month so that we can
+                // subtract and find out the difference
+                if (birth_month > current_month)
+                {
+                    current_year = current_year - 1;
+                    current_month = current_month + 12;
+                }
+
+                // calculate date, month, year
+                int calculated_date = current_date - birth_date;
+
+                int calculated_month = current_month - birth_month;
+
+                int calculated_year = current_year - birth_year;
+
+                // print the present age
+                Console.WriteLine("Present Age");
+                Console.WriteLine($"You are only {calculated_year} years, {calculated_month} months and {calculated_date} days young!");
+
+
+
+            }
+        }
+    }
+}
