@@ -1,0 +1,75 @@
+Understanding Data Types
+Test your Knowledge
+1. What type would you choose for the following “numbers”?
+
+A person’s telephone number
+int
+
+A person’s height
+float 
+
+A person’s age
+Int
+
+A person’s gender (Male, Female, Prefer Not To Answer)
+Bool
+
+A person’s salary
+Decimal
+
+A book’s ISBN
+long
+
+
+A book’s price
+double
+
+A book’s shipping weight
+double
+
+A country’s population
+uint
+
+The number of stars in the universe
+ulong
+
+The number of employees in each of the small or medium businesses in the
+United Kingdom (up to about 50,000 employees per business)
+ushort
+
+2. What are the difference between value type and reference type variables? What is
+boxing and unboxing?
+
+Value types will directly hold value while memory tpyes will hold memory addressor reference for the value
+Reference types uses a pointer that points towards the address where content is stored in memory
+
+2 Types
+1)	Values Type: Built-in, user-defined, enumerations.
+-int float, double, bool
+-cannot accept null value
+-use struct or enum to create
+-not collected by garbage collector
+-stored in stack memory
+2)	References Types: Self-describing, pointer, interface
+-string, StringBuilder, object
+-Use Class, Interface or Array to create
+-Collected by garbage collector
+-Stored in heap memory
+
+ Boxing and Unboxing is the ability to convert a value type to a reference type and vice versa
+ i.e.        //int box = 10;
+            //object obj = box;
+            //int unbox = (int)obj;
+
+
+
+3. What is meant by the terms managed resource and unmanaged resource in .NET
+Managed resources are those that are pure .NET code and managed by the runtime and are under its direct control.
+Unmanaged resources are those that are not. File handles, pinned memory, COM objects, database connections etc.
+
+
+4. Whats the purpose of Garbage Collector in .NET?
+Garbage collection:
+-Frees developers from having to manually release memory
+-Allocates objects on the managed heap efficiently
+-Reclaims objects that are no longer being used, clear memory, so their constructors don’t have to initialize every data field.
