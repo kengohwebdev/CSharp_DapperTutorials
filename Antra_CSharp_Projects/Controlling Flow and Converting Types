@@ -1,0 +1,50 @@
+Test your Knowledge
+1. What happens when you divide an int variable by 0?
+It is undefined and the code will get stuck in an infinite loop.
+
+
+2. What happens when you divide a double variable by 0?
+In C#, ∞ represents positive infinity or negative infinity
+
+3. What happens when you overflow an int variable, that is, set it to a value beyond its
+range?
+
+
+
+4. What is the difference between x = y++; and x = ++y;?
+int x = 0;
+int y = 0;
+Postfix increment x= y++;   // x = 0, y = 1
+Prefix increment  x = ++x;  // x = 1, y = 1
+
+5. What is the difference between break, continue, and return when used inside a loop
+statement?
+break   : Terminates the smallest enclosing loop such as switch statements. for or while loop.
+continue : Skips the rest of the loop statement and starts the next iteration of the loop to take place.
+           Not used with the switch statement, but in the while loop and for loop.
+return   : Terminates the execution of the method in which it appears and returns control to the calling method.
+
+
+6. What are the three parts of a for statement and which of them are required?
+Ititialization : Execute first and only once. Usually the variable is declared and initialized here.
+Condition : The condition is evaluated as boolean expression and continue if true until it is runs false.
+            The statements inside the for loop are executed.
+Iterator  : Then, the iterator statement is executed which usually changes the value of the initialized value.
+            Again, the condition is evaluated. 
+            The process continue until the condition evaluated to flase and terminates the for loop. 
+
+7. What is the difference between the = and == operators?
+The = operator is used to assign the value on the right to the variable on the left.
+The == operator checks whether the two given operands are equal or not. If so, it returns true. Otherwise, it returns false.
+
+8. Does the following statement compile? for ( ; true; ) ;
+No, invalid expression term ;
+
+
+9. What does the underscore _ represent in a switch expression?
+The switch cases can use pattern matching, so instead of using the "default" keyword, the match-all pattern can be used. It is just the "_" sign (underscore)
+It replaces the default keyword to signify that it should match anything if reached.
+
+10. What interface must an object implement to be enumerated over by using the foreach
+statement?
+Key value pairs condition exist. The IEnumerable interface permits enumeration by using a foreach loop as long as it has key value pairs.
