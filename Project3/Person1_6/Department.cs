@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace OOP_Persons
 {
      class Department : Instructor
     {
-
+        public String[] courses;
         enum _Courses
         {
             Math,
@@ -28,6 +28,15 @@ namespace OOP_Persons
            this.endDate = endDate;
         }
 
+        public void setCourses(String[] courses)
+        {
+            this.courses = courses;
+        }
+
+        public String[] getCourses()
+        {
+            return this.courses;
+        }
      
 
 
