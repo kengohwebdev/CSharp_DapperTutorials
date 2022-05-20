@@ -15,7 +15,7 @@ namespace OOP
         static void Main(string[] args)
         {
 
-            Person p1;
+           Person p1;
             Instructor i = new Instructor();
             Student s = new Student();
 
@@ -33,6 +33,15 @@ namespace OOP
             Console.WriteLine(s.age);
             i.setDepartment(dep);
             Console.WriteLine(i.getDepartment());
+
+            //Upcasting 
+            Person p2 = new Student();
+            p2.salary = 0;
+            Student s3 = new Student();
+            s3.age = 1000;
+            Person p3 = s3;
+            Console.WriteLine(p3.age);
+
             
                 
             
