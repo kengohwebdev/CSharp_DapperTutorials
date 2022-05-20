@@ -28,29 +28,102 @@ The static keyword is used to make members static that can be shared by all the 
 
 
 3. What does a constructor do?
+It runs to intialize an object when an instance is created.
+
 4. Why is the partial keyword useful?
+A partial class is created by using a partial keyword. 
+This keyword is also useful to split on a bigger project, splitting the files over different classes helps developers work on the same project simultaneously
+
 5. What is a tuple?
+The word Tuple means “a data structure which consists of the multiple parts”. 
+So tuple is a data structure which gives you the easiest way to represent a data set which has multiple values that may or may not be related to each other
+
 6. What does the C# record keyword do?
+You use the record keyword to define a reference type that provides built-in functionality for encapsulating data.
+A record or a record class declares a reference type. The class keyword is optional, but can add clarity for readers. A record struct declares a value type.
+Positional properties are immutable in a record class and a readonly record struct. They're mutable in a record struct.
+
 7. What does overloading and overriding mean?
+Polymorphism is one of the OOP pillars.
+Method Overloading is a called “Compile Time Polymorphism”.
+Method Overloading means creating multiple methods in a class with same names but different signatures.
+
+Method Overriding is called “Run Time Polymorphism”.
+Overriding : If a subclass method has the same signature as the base class method, it overrides the version.
+
 8. What is the difference between a field and a property?
+A field is a variable of any type that is declared directly in a class.
+A field can be used to explain the characteristics of an object or a class.
+A property is a member that provides a flexible mechanism to read, write or compute the value of a private field.
+A property can be used to set and receive values of a field.
+
+
 9. How do you make a method parameter optional?
+Parameter arrays:
+We can implement an optional parameter by using the parameter arrays (using the params keyword). 
+It allows us to pass any number of parameters to the methods.
+
+Default parameter values:
+We can implement optional parameters by assigning a default value for the parameters.
+
+Named Parameter:
+Invoke methods and pass parameter values as per our choice
+
+Use OptionalAttribute
+Use default value for the optional attribute is zero(0).
+
+
 10. What is an interface and how is it different from abstract class?
+Interface can have multiple inheritances and abrast do not.
+Abstract can have instanced constructor but interface cannot.
+Interface by defaults have abracts and public, whereas abstract can have abstract and concrete members.
+Abstract can have fields and Interface cannot.
+
+
 11. What accessibility level are members of an interface?
+Interfaces declared directly within a namespace can be public or internal and, just like classes and structs, interfaces default to internal access. 
+Interface members are public by default because the purpose of an interface is to enable other types to access a class or struct.
+
 12. True/False. Polymorphism allows derived classes to provide different implementations
 of the same method.
+True
+
+
 13. True/False. The override keyword is used to indicate that a method in a derived class is
 providing its own implementation of a method.
+True
+
+
 14. True/False. The new keyword is used to indicate that a method in a derived class is
 providing its own implementation of a method.
-15. True/False. Abstract methods can be used in a normal (non-abstract) class. 16.
-True/False. Normal (non-abstract) methods can be used in an abstract class. 17. True/False.
-Derived classes can override methods that were virtual in the base class. 18. True/False.
-Derived classes can override methods that were abstract in the base class. 19. True/False.
-In a derived class, you can override a method that was neither virtual non abstract in the
+False
+
+15. True/False. Abstract methods can be used in a normal (non-abstract) class. 
+False
+
+16.True/False. Normal (non-abstract) methods can be used in an abstract class. 
+True
+
+17. True/False. Derived classes can override methods that were virtual in the base class. 
+True
+
+18. True/False.Derived classes can override methods that were abstract in the base class.
+True
+
+19. True/False.In a derived class, you can override a method that was neither virtual non abstract in the
 base class.
+True
+
 20. True/False. A class that implements an interface does not have to provide an
 implementation for all of the members of the interface.
+True
+
 21. True/False. A class that implements an interface is allowed to have other members that
 aren’t defined in the interface.
+True
+
 22. True/False. A class can have more than one base class.
+True
+
 23. True/False. A class can implement more than one interface.
+True
