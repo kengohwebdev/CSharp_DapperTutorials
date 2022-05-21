@@ -4,54 +4,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Generics
+
+public class MyList<T>
 {
-    public class MyList<T>
+    public LinkedList<T> list = new LinkedList<T>();
+
+    public void Add(T element)
     {
-        public LinkedList<T> list = new LinkedList<T>();
+        list.AddFirst(element);
+    }
 
-        public void Add(T element)
+    public bool Contains(T element)
+    {
+        return list.Contains(element);
+    }
+
+    public void Clear()
+    {
+        list.Clear();
+    }
+
+    public void Remove(int index)
+    {
+
+        int i = 0;
+        if (list != null)
         {
-            list.AddFirst(element);
+            foreach (var item in list)
+            {
+                if (i == index)
+                {
+                    list.Remove(item);
+                }
+                i++;
+            }
         }
 
-        public bool Contains(T element)
-        {
-            return list.Contains(element);
-        }
-
-        public void Clear()
-        {
-            list.Clear();
-        }
-
-        public void Remove(T element)
-        {
-            list.Remove(element);
-        }
-
-
-        void InsertAt(T element, int index)
-        {
-        }
-
-        void DeleteAt(T element, int index)
-        {
-        }
-
-        
     }
 
 
-    public class GenericTest
+    void InsertAt(T element, int index)
     {
-        public static void Main(string[] args)
-        {
-            MyList<int> list = new MyList<int>();
+    }
 
-            list.Add(1);
+    void DeleteAt(T element, int index)
+    {
+    }
+
+}
 
 
-        }
+public class GenericTest
+{
+    public static void Main(string[] args)
+    {
+        MyList<int> mlist = new MyList<int>();
+        mlist.Add(1);
+        mlist.Remove(1);
     }
 }
