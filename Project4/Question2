@@ -30,16 +30,17 @@ public class MyList<T>
     public void Remove(int index)
     {
         list.RemoveAt(index);
-        
     }
 
 
-    void InsertAt(T element, int index)
+    public void InsertAt(T element, int index)
     {
+        list.Insert(index, element);
     }
 
-    void DeleteAt(T element, int index)
+    public void DeleteAt(int index)
     {
+        list.RemoveAt(index);
     }
 
 }
@@ -52,10 +53,20 @@ public class GenericTest
     {
         MyList<int> mlist = new MyList<int>();
         mlist.Add(1);
-
-       
-        mlist.Remove(0);
         mlist.Contains(1);
+        mlist.Remove(0);
+
+        mlist.Add(1);
+
+
+        mlist.InsertAt(1, 1);
+
+
+
+        mlist.Add(3);
+        mlist.DeleteAt(1);
+
+        
         mlist.Clear();
         
     }
