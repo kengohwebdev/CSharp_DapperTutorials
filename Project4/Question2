@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Generics
+{
+    public class MyStack<T>
+    {
+        private Object[] data;
+        private int top;
+        private int size;
+
+        public MyStack(int n)
+        {
+            data = new Object[n];
+            size = n;
+            top = 0;
+
+        }
+
+        public void push(Object elem)
+        {
+            if (top == size)
+            {
+                Object[] temp = new object[2 * size];
+
+                for (int i = 0; i < top; i++)
+                    temp[i] = data[i];
+                data = temp;
+                size = 2 * size;
+            }
+            data[top] = elem;
+            top++;
+        }
+
+    }
+    public class MyList<T>
+    {
+        private LinkedList<T> list = new LinkedList<T>();
+
+        public void add(T element)
+        {
+            list.AddFirst(element);
+        }
+
+        public T del(int index)
+        {
+
+        }
+
+        bool Contains(T element)
+        {
+            return list.Contains(element);
+        }
+
+        void Clear()
+        {
+            list.Clear();
+        }
+
+        void DeleteAt(int index)
+        {
+
+        }
+
+        public T Find(int index)
+        {
+
+        }
+
+    }
+
+    public class GenStackTest
+    {
+        public static void Main(String[] args)
+        {
+            MyList<String> gs = new MyList<String>();
+
+
+            gs.add("One");
+
+
+        }
+    }
+}
