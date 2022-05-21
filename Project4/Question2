@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,15 +52,26 @@ public class MyList<T>
     {
     }
 
+   
+
+ 
+
 }
 
 
 public class GenericTest
 {
+ 
     public static void Main(string[] args)
     {
         MyList<int> mlist = new MyList<int>();
         mlist.Add(1);
+
+       
         mlist.Remove(1);
+        mlist.Contains(1);
+        mlist.Clear();
+        
+
     }
 }
