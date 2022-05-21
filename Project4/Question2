@@ -8,15 +8,17 @@ using System.Threading.Tasks;
 
 public class MyList<T>
 {
-    public LinkedList<T> list = new LinkedList<T>();
+    public List<T> list = new List<T>();
 
+  
     public void Add(T element)
     {
-        list.AddFirst(element);
+        list.Add(element);
     }
 
     public bool Contains(T element)
     {
+       
         return list.Contains(element);
     }
 
@@ -27,20 +29,8 @@ public class MyList<T>
 
     public void Remove(int index)
     {
-
-        int i = 0;
-        if (list != null)
-        {
-            foreach (var item in list)
-            {
-                if (i == index)
-                {
-                    list.Remove(item);
-                }
-                i++;
-            }
-        }
-
+        list.RemoveAt(index);
+        
     }
 
 
@@ -51,10 +41,6 @@ public class MyList<T>
     void DeleteAt(T element, int index)
     {
     }
-
-   
-
- 
 
 }
 
@@ -68,10 +54,9 @@ public class GenericTest
         mlist.Add(1);
 
        
-        mlist.Remove(1);
+        mlist.Remove(0);
         mlist.Contains(1);
         mlist.Clear();
         
-
     }
 }
