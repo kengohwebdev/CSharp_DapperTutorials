@@ -1,0 +1,203 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Generics
+{
+
+    class MyStack<T>
+    {
+        int capacity;
+        T[] stack;
+        int top;
+
+        public MyStack(int MaxElements)
+        {
+            capacity = MaxElements;
+            stack = new T[capacity];
+        }
+
+
+        public int Count()
+        {
+            int count = 0;
+            foreach (T item in stack)
+            {
+                count++;
+            }
+            return count;
+        }
+        public T pop()
+
+        {
+
+            T RemovedElement;
+
+            T temp = default(T);
+
+
+
+            if (!(top <= 0))
+
+            {
+
+                RemovedElement = stack[top];
+
+                top = top - 1;
+
+                return RemovedElement;
+
+            }
+
+            return temp;
+
+        }
+
+
+
+        public int push(T Element)
+
+        {
+
+
+
+            if (top == capacity - 1)
+
+            {
+
+
+
+                return -1;
+
+            }
+
+            else
+
+            {
+
+
+
+                top = top + 1;
+
+                stack[top] = Element;
+
+            }
+
+            return 0;
+
+        }
+
+
+
+    }
+
+    public class CustomStackTest
+    {
+        public static void Main(string[] args)
+        {
+            int capacity;
+
+            Console.WriteLine("Enter Capacity of Stack :");
+
+            capacity = int.Parse(Console.ReadLine());
+
+            MyStack<string> stack = new MyStack<string>(10);
+
+            while (true)
+
+            {
+                Console.WriteLine("1.Count");
+                Console.WriteLine("2.Pop");
+                Console.WriteLine("3.Push");
+
+
+                Console.WriteLine("Enter your Choice :");
+
+                int choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+
+                {
+
+                    case 1:
+                        {
+
+                            int _Count = stack.Count();
+                            Console.WriteLine($"There are {_Count} item in the stack. ");
+
+                            break;
+                        }
+                    case 2:
+                        {
+
+                            string Result = stack.pop();
+
+                            if (Result != null)
+
+                            {
+
+                                Console.WriteLine("Delete Element :" + Result);
+
+                            }
+
+                            else
+
+                            {
+
+                                Console.WriteLine("Stack Underflow !");
+
+                            }
+
+                            break;
+
+                        }
+
+
+                    case 3:
+                        {
+                            Console.WriteLine("Enter String to Push :");
+
+                            string temp = Console.ReadLine();
+
+                            int result = stack.push(temp);
+
+
+
+                            if (result != -1)
+
+                            {
+
+                                Console.WriteLine("Element Pushed into Stack !");
+
+                            }
+
+                            else
+
+                            {
+
+                                Console.WriteLine("Stack Overflow !");
+
+                            }
+
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("You have Entered Wrong Choice ");
+
+                            break;
+                        }
+                }
+
+            }
+
+        }
+    }
+
+}
+
+
+
+
