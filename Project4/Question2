@@ -1,52 +1,57 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace Generics
-//{
-//    public class MyList<T>
-//    {
-//        public LinkedList<T> list = new LinkedList<T>();
+namespace Generics
+{
+    public class MyList<T>
+    {
+        public LinkedList<T> list = new LinkedList<T>();
 
-//        public void Add(T element)
-//        { 
-//            list.AddFirst(element);
-//        }
+        public void Add(T element)
+        {
+            list.AddFirst(element);
+        }
 
-//        public bool Contains(T element)
-//        {
-//            return list.Contains(element);
-//        }
+        public bool Contains(T element)
+        {
+            return list.Contains(element);
+        }
 
-//        public void Clear()
-//        {
-//            list.Clear();
-//        }
+        public void Clear()
+        {
+            list.Clear();
+        }
 
-//        public T Remove(int index)
-//        {
-//           object value = list.Remove(index);
-//        }
-
-
-       
- 
+        public void Remove(T element)
+        {
+            list.Remove(element);
+        }
 
 
-//    }
+        void InsertAt(T element, int index)
+        {
+        }
+
+        void DeleteAt(T element, int index)
+        {
+        }
+
+        
+    }
 
 
-//    public class GenericTest
-//    {
-//        public static void Main(string[] args)
-//        {
-//            MyList<int> list = new MyList<int>();
+    public class GenericTest
+    {
+        public static void Main(string[] args)
+        {
+            MyList<int> list = new MyList<int>();
 
-//            list.Add(1);
+            list.Add(1);
 
-            
-//        }
-//    }
-//}
+
+        }
+    }
+}
