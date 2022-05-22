@@ -1,45 +1,47 @@
-using Generics;
+using Project4.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Generics
+namespace Project4.Repository
 {
-    public class Repository : IRepository<MyStack>
+    public class Repository : IRepository<Department>
     {
-        private LinkedList<T> list = new LinkedList<E>();
-        public void Add(T item)
-        {
-            list.AddLast(item);
-        };
+        List<Department> _list;
 
-        void Remove(T item)
+        public Repository()
         {
-            return list.RemoveLast(item);
-        };
+            _list = new List<Department>();
+        }
+        public void Add(Department item)
+        {
+            _list.Add(item);
+        }
 
-        void Save(T item)
+        public void Remove(Department item)
         {
-            var save;
-            foreach (T _item in list)
+            _list.Remove(item);
+        }
+
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+        public IEnumerable<Department> GetAll()
+        {
+            return _list;
+        }
+
+        public Department GetById(int id)
+        {
+            foreach (Department d in _list)
             {
-                if (_item == item)
-                    save = item;
+                if (d.Id == id) { return d; }
             }
-            return save;
-        };
-
-        IEnumerable<T> GetAll()
-        {
-            return list;
-        };
-
-        T GetById(int id)
-        {
-
-        };
-
+            return null;
+        }
     }
 }
