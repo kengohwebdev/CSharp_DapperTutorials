@@ -24,13 +24,21 @@ namespace OOP
 
           
             //upcasting
+            Person sp = new Student();
+            
+            //downcasting
+            Student ns = Student(sp);
+            
+            sp.Classes();
+            ns.Classes();
+            
             Person p1;
             p1 = new Student();
             p1.age = 18;
             Console.WriteLine(p1.age);
 
 
-            //downcasting
+           
             Student s1 = new Student();
             s1.age = 21;
            
