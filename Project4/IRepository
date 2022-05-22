@@ -1,22 +1,24 @@
+using Project4.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository
+namespace Project4.Repository
 {
     public interface IRepository<T> where T : class
     {
-        void Add(T item);
+        public void Add(T item);
 
-        void Remove(T item);
+        public void Remove(T item);
 
-        void Save(T item);  
-        IEnumerable<T> GetAll();
+        public void Save();
 
-        T GetById(int id);
+        public IEnumerable<T> GetAll();    
+        public T GetById(int id);
 
+        
 
     }
 }
